@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseWebDriverTest {
-    @Test(dataProvider = "localBrowsers")
+    @Test(dataProvider = "sauceBrowsers")
     public void loginTestValid(String browser, String browserVersion, String platformName, RunType runType) {
         this.createDriver(browser, browserVersion, platformName, "loginTest", runType);
         LoginPage loginPage = new LoginPage(getWebDriver());
