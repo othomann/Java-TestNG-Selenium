@@ -31,10 +31,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
-            <scope>test</scope>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
         </dependency>
         <dependency>
             <groupId>com.saucelabs</groupId>
@@ -59,8 +58,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.12.4</version>
                 <configuration>
-                	<parallel>classes</parallel>
-          			<threadCount>40</threadCount>
+                    <threadCount>40</threadCount>
+                    <parallel>methods</parallel>
                     <redirectTestOutputToFile>false</redirectTestOutputToFile>
                 </configuration>
             </plugin>
