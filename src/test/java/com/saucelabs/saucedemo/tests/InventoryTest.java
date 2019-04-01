@@ -1,6 +1,6 @@
-package com.yourcompany.tests;
+package com.saucelabs.saucedemo.tests;
 
-import com.yourcompany.Pages.InventoryPage;
+import com.saucelabs.saucedemo.Pages.InventoryPage;
 import org.testng.annotations.Test;
 
 import java.util.stream.IntStream;

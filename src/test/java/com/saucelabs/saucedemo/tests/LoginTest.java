@@ -1,13 +1,13 @@
-package com.yourcompany.tests;
+package com.saucelabs.saucedemo.tests;
 
-import com.yourcompany.Pages.InventoryPage;
-import com.yourcompany.Pages.LoginPage;
+import com.saucelabs.saucedemo.Pages.InventoryPage;
+import com.saucelabs.saucedemo.Pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseWebDriverTest {
-    @Test(dataProvider = "sauceBrowsers")
-    public void loginTestValid2(String browser, String browserVersion, String platformName, RunType runType) {
+    @Test(dataProvider = "localBrowsers")
+    public void loginTestValid(String browser, String browserVersion, String platformName, RunType runType) {
         this.createDriver(browser, browserVersion, platformName, "loginTest", runType);
         LoginPage loginPage = new LoginPage(getWebDriver());
         InventoryPage inventoryPage = new InventoryPage(getWebDriver());

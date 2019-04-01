@@ -1,4 +1,4 @@
-package com.yourcompany.tests;
+package com.saucelabs.saucedemo.tests;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.MutableCapabilities;
@@ -102,10 +102,6 @@ public class BaseWebDriverTest {
     public static Object[][] localBrowserDataProvider(Method beforeMethod) {
         RunType runType = RunType.LOCAL;
         return new Object[][]{
-                new Object[]{"chrome", "latest-1", "Windows 10", runType},
-                new Object[]{"chrome", "latest-1", "Windows 10", runType},
-                new Object[]{"chrome", "latest-1", "Windows 10", runType},
-                new Object[]{"chrome", "latest-1", "Windows 10", runType},
                 new Object[]{"chrome", "latest-1", "Windows 10", runType},
         };
     }

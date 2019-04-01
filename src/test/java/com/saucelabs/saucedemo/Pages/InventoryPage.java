@@ -1,4 +1,4 @@
-package com.yourcompany.Pages;
+package com.saucelabs.saucedemo.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
