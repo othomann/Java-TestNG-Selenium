@@ -6,6 +6,7 @@ import com.saucelabs.testng.SauceOnDemandAuthenticationProvider;
 import com.saucelabs.testng.SauceOnDemandTestListener;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -102,9 +103,15 @@ public class TestBase  {
         }
 
         // Launch remote browser and set it as the current thread
-        webDriver.set(new RemoteWebDriver(
+        try {
+            webDriver.set(new RemoteWebDriver(
                 new URL("https://" + username + ":" + accesskey + "@ondemand.saucelabs.com/wd/hub"),
                 capabilities));
+        } catch(WebDriverException e) {
+            webDriver.set(new RemoteWebDriver(
+                new URL("https://" + username + ":" + accesskey + "@ondemand.eu-central-1.saucelabs.com/wd/hub"),
+                capabilities));
+        }
 
         // set current sessionId
         String id = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
